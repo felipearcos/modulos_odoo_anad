@@ -1,0 +1,2 @@
+﻿05-11-2019		-			Inicio del desarrollo
+06-11-2019		8.0.1			Instalación en test y real

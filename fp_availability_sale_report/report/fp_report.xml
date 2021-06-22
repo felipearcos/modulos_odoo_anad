@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <report id="sale.availability_report"
+                string="Presupuesto para comprobar"
+                model="sale.order"
+                report_type="qweb-pdf"
+                name="fp_availability_sale_report.fp_sale_template"
+                file="fp_availability_sale_report.fp_sale_template"
+                attachment_use="True"
+                attachment="(object.state in ('open','paid')) and ('PRESUPUESTO COMPROBACION'+(object.number or '').replace('/','')+'.pdf')"/>
+
+        <record id="sale.availability_report" model="ir.actions.report.xml">
+            <field name="paperformat_id" eval="ref('fp_availability_sale_report.fp_sale_paper')"/>
+        </record>
+
+    </data>
+</openerp>

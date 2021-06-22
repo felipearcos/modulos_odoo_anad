@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <template id="fp_sale_report">
+            <t t-call="fp_availability_sale_report.fp_sale_report_header"/>
+            <t t-raw="0"/>
+        </template>
+
+        <template id="fp_sale_report_footer">       
+        </template>
+
+        <template id="fp_sale_report_layout">
+           <t t-call="fp_sale_method.fp_sale_report_header"/>
+            <t t-raw="0"/>
+        </template>
+
+        <template id="fp_sale_report_header">
+            <div class="header">
+                <div class="row">
+                    <div class="col-xs-4">
+                        <!--<img t-if="company.logo" t-att-src="'data:image/png;base64,%s' % company.logo" class="img-responsive"/>-->
+                    </div>
+                </div>
+            </div>
+        </template>
+
+    </data>
+</openerp>

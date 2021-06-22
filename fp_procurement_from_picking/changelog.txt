@@ -1,0 +1,6 @@
+﻿30-04-2019		-		Separado de fp_picking_method
+30-04-2019		8.0.1		Primera instalación en TEST
+06-05-2019		8.0.2		Funcionamiento básico pero estable del paso de albarán a abastecimiento
+10-05-2019		8.0.3		Aplicadas ultimas funcionalidades. A falta de integrar los cambios en los otros módulos
+10-05-2019		8.0.4		Corregido bug en las otras solicitudes de abastecimiento
+15-05-2019		8.0.5		Añadidas funcionalidades y corrección de errores. Nueva instalación en producción

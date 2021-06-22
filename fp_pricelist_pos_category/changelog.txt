@@ -1,0 +1,3 @@
+CHANGELOG
+=========
+05/11/18 - Primera versión. A falta de más pruebas calcula la tarifa a partir de una regla basada en la categoría de TPV. Funcional tanto en presupuestos como en TPV.

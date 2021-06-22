@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<openerp>
+    <data>
+        <record id="fp_account_opening_partner_form_inherit" model="ir.ui.view">
+            <field name="name">fp.account.opening.partner.form.inherit</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="account.view_partner_property_form"/>
+            <field name="arch" type="xml">
+                <field name="credit_limit" position="after">
+                    <field name="opening_balance_customer" attrs="{'invisible':[('customer', '!=', True)]}" />/>
+                </field>
+                <field name="debit" position="after">
+                    <field name="opening_balance_supplier" attrs="{'invisible':[('supplier', '!=', True)]}" />/>
+                </field>
+                
+            </field>
+        </record>
+
+
+
+    </data>
+
+</openerp>

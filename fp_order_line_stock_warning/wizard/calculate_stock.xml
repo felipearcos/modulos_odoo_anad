@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="fp_wizard_stock_calculation" model="ir.ui.view">
+            <field name="name">fp.wizard.stock.calculation</field>
+            <field name="model">calculate.stock.wizard</field>
+            <field name="arch" type="xml">
+            <form string="Calculo de stock productos añadidos al presupuesto">
+                <group>
+                    <p class="oe_black">
+                        <field name="stringStock" />
+                    </p>
+                </group>
+                <footer>
+                    <button string="Aceptar" special="cancel" />
+                </footer>
+            </form>
+           
+            </field>
+        </record>
+
+    </data>
+</openerp>

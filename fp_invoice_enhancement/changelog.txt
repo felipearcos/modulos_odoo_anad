@@ -1,0 +1,3 @@
+CHANGELOG
+=========
+26/09/18 - Añadido soporte para validar pagos individuales, cálculo de validación de factura total, cálculo del pago parcial de la factura, número de factura extraido para facilitar la ordenación y lectura y permisos especiales para ver y manipular los campos creados

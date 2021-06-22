@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<openerp>
+    <data>
+        
+        <record id="fp_location_product_template_form_view" model="ir.ui.view">
+            <field name="name">fp.location.product.template.form.view</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_only_form_view"/>
+            <field name="arch" type="xml">
+                <notebook position="inside">
+                    <page string="Ubicaciones" groups="fp_location_by_product.fp_location_by_product_permission">
+                        <group>
+                            <group string="Ubicaciones de almacen">
+                                <field name="ref_c"/>
+                                <field name="ref_t"/>
+                                <field name="ref_cu"/>
+                                <field name="ref_m"/>
+                            </group>
+                            <group string="Ubicaciones de tienda">
+                                <group col="4" colspan="4">
+                                    <field name="ref_tienda_alb" colspan="4"/>
+                                    <field class="little oe_inline" string="Regla de reabastecimiento" name="tiene_reab_alb" colspan="2"/>
+                                </group>
+                                <group col="4" colspan="4">
+                                    <field name="ref_tienda_ali" colspan="4"/>
+                                    <field class="little oe_inline" string="Regla de reabastecimiento" name="tiene_reab_ali" colspan="2"/>
+                                </group>
+                                <group col="4" colspan="4">
+                                    <field name="ref_tienda_cue" colspan="4"/>
+                                    <field class="little oe_inline" string="Regla de reabastecimiento" name="tiene_reab_cue" colspan="2"/>
+                                </group>
+                                <group col="4" colspan="4">
+                                    <field name="ref_tienda_tor" colspan="4"/>
+                                    <field class="little oe_inline" string="Regla de reabastecimiento" name="tiene_reab_tor" colspan="2"/>
+                                </group>
+                                <group col="4" colspan="4">
+                                    <field name="ref_tienda_vil" colspan="4"/>
+                                    <field class="little oe_inline" string="Regla de reabastecimiento" name="tiene_reab_vil" colspan="2"/>
+                                </group>  
+                            </group>
+                        </group>
+                    </page>
+                </notebook>
+            </field>
+        </record>
+
+    </data>
+
+</openerp>

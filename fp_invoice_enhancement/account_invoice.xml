@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<openerp>
+    <data>
+
+
+        <record id="fp_invoice_simplificada_tree_inherit" model="ir.ui.view">
+            <field name="name">fp.invoice.simplificada.tree.inherit</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_tree"/>
+            <field name="groups_id" eval="[(6, 0, [ref('fp_payment_permission.payment_validation')])]"/>
+            <field name="arch" type="xml">
+                <field name="partner_id" position="before">
+                    <field name="num_simplificada" string="Num"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="fp_invoice_validacion_tree_inherit" model="ir.ui.view">
+            <field name="name">fp.invoice.validacion.tree.inherit</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_tree"/>
+            <field name="arch" type="xml">
+                <field name="state" position="after">
+                    <!--<field name="comprobacion" string="Pago validado"/>-->
+                    <field name="comprobacion_g" string="Pago validado"/>
+                    <field name="pago_parcial" string="Pago parcial" invisible="1"/>
+                </field>
+            </field>
+        </record>
+
+
+        <record id="fp_account_invoice_checker_form_inherit" model="ir.ui.view">
+            <field name="name">fp.account.invoice.form.inherit</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_form"/>
+            <field name="groups_id" eval="[(6, 0, [ref('fp_payment_permission.payment_validation')])]"/>
+            <field name="arch" type="xml">
+                <field name="payment_ids" position="before">
+                        <group>
+                            <field name="comprobacion" string="Validacion del registro de pago"/>
+                            <!--<field name="comprobacion_g" string="Pago validado"/>-->
+                            <field name="pago_parcial" string="Pago parcial" invisible="1"/>
+
+                        </group>
+                </field>
+                <field name="comprobacion" position="attributes">
+                    <attribute name="readonly">True</attribute>
+                </field>
+            </field>
+        </record>
+
+        <record id="fp_account_invoice_checker_payment_form_inherit" model="ir.ui.view">
+            <field name="name">fp.account.invoice.payment.form.inherit</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_form"/>
+            <field name="groups_id" eval="[(6, 0, [ref('fp_payment_permission.payment_validation')])]"/>
+            <field name="arch" type="xml">
+                <xpath expr="//tree[@string='Payments']/field[@name='credit']" position="after">
+                            <field name="validacion" string="Pago validado"/>
+                            <button name="validar" attrs="{'invisible':[('validacion','=',True)]}" groups="fp_payment_permission.payment_validation" type="object" string="Validar"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+
+</openerp>

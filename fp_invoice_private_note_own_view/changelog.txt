@@ -1,0 +1,5 @@
+﻿CHANGELOG
+=========
+27-01			-			Inicio de desarrollo
+30-01			8.0.1			Primera versión. Solo test
+04-02			8.0.2			Segunda versión. Instalando en producción y TPV

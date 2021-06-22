@@ -1,0 +1,4 @@
+12-11-2019		-			Inicio del desarrollo
+13-11-2019		8.0.1			Primera versión completa instalada en Local (campos almacenados)	
+14-11-2019		8.0.2			Primera	versión completa instalada en TEST (campos calculados)
+20-11-2019		8.0.3			Ultimos cambios en iconos, añadido calculo de precio de coste a partir de componentes, mas detalles pequeños

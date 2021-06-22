@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<openerp>
+   <data>
+        <record id="fp_procurement_extras_inherit" model="ir.ui.view">
+            <field name="name">fp.procurement.extras.inherit</field>
+            <field name="model">make.procurement</field>
+            <field name="inherit_id" ref="stock.view_make_procurment_wizard"/>
+            <field name="arch" type="xml">
+                <field name="date_planned" position="after">
+                    <field name="supplier" readonly="0" domain="[('supplier','=',True)]"/>
+                    <field name="destino_producto" readonly="0" />
+                    
+                </field>
+                <field name="qty" position="attributes">
+                    <attribute name="readonly">0</attribute>
+                </field>
+                <field name="date_planned" position="attributes">
+                    <attribute name="readonly">0</attribute>
+                </field>
+            </field>
+        </record>
+
+        <record id="fp_procurement_order_supplier_inherit" model="ir.ui.view">
+            <field name="name">fp.procurement.order.supplier.inherit</field>
+            <field name="model">procurement.order</field>
+            <field name="inherit_id" ref="procurement.procurement_form_view"/>
+            <field name="arch" type="xml">
+                <field name="product_id" position="after">
+                    <field name="supplier"/>
+                    <field name="destino_producto" />
+                </field>
+            </field>
+        </record>
+    </data>
+</openerp>

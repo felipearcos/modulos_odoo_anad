@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!-- Wizard de generar referencias masivamente -->
+        <record id="wizard_update_validation" model="ir.ui.view">
+            <field name="name">wizard.update.validation</field>
+            <field name="model">update.validation</field>
+            <field name="arch" type="xml">
+            <form string="Calculo pagos validados">
+                <p class="oe_grey">
+                <h2><i class="fa fa-exclamation-triangle"/>Se van a recalcular los pagos validados</h2>
+                      <button name="update_validation" string="Calculo pagos validados"
+                              type="object" class="oe_highlight"/>
+                      or
+                      <button string="Cancelar" class="oe_link" special="cancel" />
+                </p>
+            </form>
+            </field>
+        </record>
+
+        <record id="action_update_validation" model="ir.actions.act_window">
+            <field name="name">Calcular pagos validados</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">update.validation</field>
+            <field name="src_model">account.invoice</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="wizard_update_validation"/>
+            <field name="context">{'record_ids': active_ids}</field>
+            <field name="target">new</field>
+        </record>
+
+        <act_window id="act_update_validation"
+            key2="client_action_multi"
+            name="Calcular pagos validados"
+            res_model="update.validation"
+            src_model="account.invoice"
+            view_id="wizard_update_validation"
+            view_mode="form" target="new" view_type="form" />
+
+    </data>
+</openerp>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<openerp>
+   <data>
+        <record id="fp_sale_shipped_new_inherit" model="ir.ui.view">
+            <field name="name">fp.sale.shipped.new.inherit</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale_stock.view_order_form_inherit"/>
+            <field name="arch" type="xml">
+                <field name="shipped" position="after">
+                    <field name="shipped_new"/>
+                </field>
+            </field>
+        </record>
+    </data>
+
+</openerp>

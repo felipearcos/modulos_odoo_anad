@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+
+    <!-- Se anaden los campos que se van a utilizar a la vista de formulario de pos.category -->
+    <record id="auto_code_product_category_view" model="ir.ui.view">
+        <field name="name">auto.code.product.category.form.view</field>
+        <field name="model">pos.category</field>
+        <field name="inherit_id" ref="point_of_sale.product_pos_category_form_view"/>
+        <field name="arch" type="xml">
+            <field name="parent_id" position="before">
+                    <field name="code"/> 
+                    <!--<button name="set_code" string="Usar siguiente"
+                            type="object" class="oe_inline oe_edit_only"/>-->
+                <field name="prefix_code"/>
+                <field name="use_sequence"/>
+                <field name="sequence_id"
+                       attrs="{'invisible': [('use_sequence','=', False)]}"/>
+               <field name="sequence_cat_id"
+                       attrs="{'invisible': [('use_sequence','=', False)]}"/>
+            </field>
+        </field>
+    </record>
+
+    <!-- Esconde la secuencia (orden) para evitar confusiones.-->
+    <record id="pos_category_sequence_hide" model="ir.ui.view">
+        <field name="name">pos.category.sequence.hide.form.view</field>
+        <field name="model">pos.category</field>
+        <field name="inherit_id" ref="point_of_sale.product_pos_category_form_view"/>
+        <field name="arch" type="xml">
+             <xpath expr="//field[@name='sequence']" position="attributes">    
+                <attribute name="invisible">1</attribute>
+            </xpath>    
+        </field>
+    </record>
+
+    <!-- Esconde la secuencia (orden) para evitar confusiones.-->
+    <record id="pos_category_help" model="ir.ui.view">
+        <field name="name">pos.category.help.form.view</field>
+        <field name="model">pos.category</field>
+        <field name="inherit_id" ref="point_of_sale.product_pos_category_form_view"/>
+        <field name="arch" type="xml">
+             <xpath expr="//sheet" position="after">  
+                <sheet>
+                <p class="oe_grey" style="width: 800px !important">
+                <h2><i class="fa fa-info-circle"/> Ayuda</h2> <br/>
+                    <ul>
+                <li>Si se crea una <b>CATEGORiA PADRE</b>, solo se debe indicar el <b>DiGITO DE CATEGORiA</b>.</li>
+                <li>Si se crea una <b>CATEGORiA HIJO (1)</b> (solo tiene por encima la padre), solo se debe especificar cual es la categoria padre.</li>
+                <li>Si se crea una <b>CATEGORiA HIJO DE BAJO NIVEL</b>, se debe rellenar la <b>SECUENCIA DE PRODUCTO</b> con la de su categoria superior. </li>
+                </ul>
+
+                <b>Ejemplos:</b> <br/>
+                    - Se quiere crear la categoria <i><mark>Informatica</mark></i>. Solo se debe rellenar el digito de categoria, con un numero del 1 al 9.<br/>
+                    - Se quiere crear la subcategoria <i>Informatica > <mark>Portatiles</mark></i>. Solo rellenamos el valor Categoria padre <i>Informatica</i>.<br/>
+                    - Se quiere crear la subcategoria <i>Informatica > Portatiles > <mark>Toshiba</mark></i>. Cuando se cree <i>Toshiba</i>, se debe especificar en Secuencia de producto la secuencia <i>Informatica / Portatiles</i>. El resto de campos se rellenaran automaticamente.<br/><br/>
+                
+                Es importante seguir los pasos correctamente para no causar problemas en la generacion de referencias.
+                </p>
+            </sheet>
+            </xpath>    
+        </field>
+    </record>
+
+</data>
+</openerp>

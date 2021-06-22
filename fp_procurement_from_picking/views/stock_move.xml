@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<openerp>
+   <data>
+        <record model="ir.actions.act_window" id="act_make_procurement_inherit">
+                <field name="name">Solicitud de abastecimiento</field>
+                <field name="res_model">make.procurement</field>
+                <field name="src_model">stock.move</field>
+                <field name="context">{'default_product_id': context.get('product_id', False),}</field>
+                <field name="view_mode">form</field>
+                <field name="target">new</field>
+        </record>
+
+        <record id="fp_stock_move_procurement_button_inherit" model="ir.ui.view">
+            <field name="name">fp.stock.move.procurement.button.inherit</field>
+            <field name="model">stock.move</field>
+            <field name="inherit_id" ref="stock.view_move_picking_tree"/>
+            <field name="arch" type="xml">
+                <field name="state" position="after">
+                    <button name="set_issue" string="Marcar como incidencia de abastecimiento" type="object" icon="gtk-dialog-warning"/>
+                    <button name="%(fp_procurement_from_picking.act_make_procurement_inherit)d" context="{'product_id': product_id}" type="action" class="oe_highlight" string='Solicitar abastecimiento' attrs="{'invisible':[('procurement_done', '==', True)]}"/>
+                    <button name="%(fp_procurement_from_picking.act_make_procurement_inherit)d" context="{'product_id': product_id}" type="action" class="oe_link" string='Resolicitar abastecimiento' attrs="{'invisible':[('procurement_done', '!=', True)]}"/>
+                    <button name="set_done" string="Marcar como pedido" type="object" icon="STOCK_APPLY"/>
+		    <field name="procurement_done" invisible="1" />
+                    <field name="procurement_issue" invisible="1" />
+                    <field name="destino_producto_mv" />
+                </field>
+            </field>
+        </record>
+    </data>
+
+</openerp>

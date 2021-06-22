@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+<data>
+<template id="product_outlet_label_report">
+    <t t-call="report.html_container">
+        <t t-set= "columnas" t-value="0" />
+        <br/><br/><div class="page">
+        <table style="border:0px;width:700px;height:150px;">
+            <style>
+                 .salto{
+                 page-break-after: always;
+                 }
+             </style>
+            <tr style="width:200px;height:120px;min-height:120px;max-height:120px;">
+                <t t-foreach="docs" t-as="o">
+                    <td style="height:120px !important;min-height:120px !important;max-height:120px !important">
+                        <t t-if="columnas == 15">
+                            <p class="salto"> 
+                            </p>
+                        </t>
+                        <t t-if="columnas == 30">
+                            <p class="salto"> 
+                            </p>
+                        </t>
+                        <t t-if="columnas == 45">
+                            <p class="salto"> 
+                            </p>
+                        </t>
+                        <t t-if="columnas == 60">
+                            <p class="salto"> 
+                            </p>
+                        </t>
+                        <t t-if="columnas == 75">
+                            <p class="salto"> 
+                            </p>
+                        </t>
+                        <t t-if="columnas == 90">
+                            <table class="salto">
+                            </table>
+                        </t>
+                        <t t-if="columnas == 105">
+                            <table class="salto">
+                            </table>
+                        </t>
+                        <t t-if="columnas == 120">
+                            <table class="salto">
+                            </table>
+                        </t>
+                        <t t-if="columnas == 135">
+                            <table class="salto">
+                            </table>
+                        </t>
+                        <t t-if="columnas == 150">
+                            <table class="salto">
+                            </table>
+                        </t>
+                        <t t-if="columnas == 165">
+                            <table class="salto">
+                            </table>
+                        </t>
+                        <t t-if="columnas == 180">
+                            <table class="salto">
+                            </table>
+                        </t>
+                        <table style="margin-top:10px;border:2px solid black;width:200px;height:120px;min-height:120px;max-height:120px">
+                        <tr style="border:1px solid black;height:60px;">
+                            <td style="border:1px solid black;text-align:center;vertical-align:middle;font-size:15px;height:45px;" colspan="2">
+                                <div text-align="center">
+                                    <span text-align="center" t-field="o.name"/>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr style="border:1px solid black;height:30px;max-height:30px;min-height:30px;">
+                                <td style="width:20%;border:1px solid black;text-align:center;vertical-align:middle;font-size:13px;"><span t-field="o.default_code" style="width:50%;height:50%;"/></td>
+                                <td style="width:80%;border:1px solid black;text-align:center;vertical-align:middle;font-size:13px;"><strike><span style="font-size:13px;" t-esc="'%.2f'%(o.label_price)"/> €</strike>     <span style="font-size:15px;" t-field="o.list_price"/> € 
+                                <!--Marcas-->
+                                <t t-if="o.product_tmpl_id.check_double">
+                                    <span style="font-size:20px; !important"> ★</span>
+                                </t>
+                                <t t-if="o.product_tmpl_id.check_vp">
+                                    <span style="font-size:16px; !important"> ℗</span>
+                                </t>
+                                <t t-if="o.product_tmpl_id.check_expo">
+                                    <span style="font-size:16px; !important">Ε</span>
+                                </t>
+                                <!--Fin Marcas -->
+                                
+                                </td>     
+                        </tr>
+                        <tr style="border:1px solid black;height:30px;max-height:30px;min-height:30px;"> 
+                            <td style="border:1px solid black;text-align:center;vertical-align:middle;font-size:16px;padding-top:5px;padding-bottom:5px" colspan="2">
+                                <div><img style="width:80%;height:30%;" t-att-src="'/report/barcode/EAN13/%s' % o.ean13"/></div>
+                            </td>
+                        </tr>
+                        </table>
+                    </td>
+                   <t t-set= "columnas" t-value="columnas+1"/>
+                   <t t-if="columnas == 3">
+                <tr></tr>
+                </t>
+                <t t-if="columnas == 6">
+                <tr></tr>
+                </t>
+                <t t-if="columnas == 9">
+                <tr></tr>
+                </t>
+                <t t-if="columnas == 12">
+                <tr></tr>
+                </t>
+                <t t-if="columnas == 15">
+                <tr></tr>
+                </t>
+
+                <t t-if="columnas == 18">
+                <tr></tr>
+                </t>
+                <t t-if="columnas == 21">
+                <tr></tr>
+                </t>
+                <t t-if="columnas == 24">
+                <tr></tr>
+                </t>
+                <t t-if="columnas == 27">
+                <tr></tr>
+                </t>
+                <t t-if="columnas == 30">
+                <tr></tr>
+                </t>
+
+                <t t-if="columnas == 33">
+                <tr></tr>
+                </t>
+                <t t-if="columnas == 36">
+                <tr></tr>
+                </t>
+                <t t-if="columnas == 39">
+                <tr></tr>
+                </t>
+                <t t-if="columnas == 42">
+                <tr></tr>
+                </t>
+                <t t-if="columnas == 45">
+                <tr></tr>
+                </t>
+                <t t-if="columnas == 48">
+                <tr></tr>
+                </t>
+                <t t-if="columnas == 51">
+                <tr></tr>
+                </t>
+                <t t-if="columnas == 54">
+                <tr></tr>
+                </t>
+                <t t-if="columnas == 57">
+                <tr></tr>
+                </t>
+                <t t-if="columnas == 60">
+                <tr></tr>
+                </t>
+                <t t-if="columnas == 63">
+                <tr></tr>
+                </t>
+                <t t-if="columnas == 66">
+                <tr></tr>
+                </t>
+                <t t-if="columnas == 69">
+                <tr></tr>
+                </t>
+                <t t-if="columnas == 72">
+                <tr></tr>
+                </t>
+                <t t-if="columnas == 75">
+                <tr></tr>
+                </t>
+                <t t-if="columnas == 78">
+                <tr></tr>
+                </t>
+                <t t-if="columnas == 81">
+                <tr></tr>
+                </t>
+                <t t-if="columnas == 84">
+                <tr></tr>
+                </t>
+                <t t-if="columnas == 87">
+                <tr></tr>
+                </t>
+                <t t-if="columnas == 90">
+                <tr></tr>
+                </t>
+                <t t-if="columnas == 93">
+                <tr></tr>
+                </t>
+                <t t-if="columnas == 96">
+                <tr></tr>
+                </t>
+                <t t-if="columnas == 99">
+                <tr></tr>
+                </t>
+                <t t-if="columnas == 102">
+                <tr></tr>
+                </t>
+                <t t-if="columnas == 105">
+                <tr></tr>
+                </t>
+                <t t-if="columnas == 108">
+                <tr></tr>
+                </t>
+                <t t-if="columnas == 111">
+                <tr></tr>
+                </t>
+                <t t-if="columnas == 114">
+                <tr></tr>
+                </t>
+                <t t-if="columnas == 117">
+                <tr></tr>
+                </t>
+                <t t-if="columnas == 120">
+                <tr></tr>
+                </t>
+                <t t-if="columnas == 123">
+                <tr></tr>
+                </t>
+                <t t-if="columnas == 125">
+                <tr></tr>
+                </t>
+                <t t-if="columnas == 128">
+                <tr></tr> </t>
+                </t>
+            </tr>
+        </table>
+        </div>
+    </t>
+</template>
+
+
+</data>
+</openerp>
+
+

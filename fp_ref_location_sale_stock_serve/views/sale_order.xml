@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<openerp>
+   <data>
+        <record id="fp_sale_order_check_inherit" model="ir.ui.view">
+            <field name="name">fp.sale.order.check.inherit</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                
+                <xpath expr='//field[@name="order_line"]//tree/field[@name="price_subtotal"]' position="after">
+                    <field name="tiene_ubicacion_almacen" invisible="1"/>
+                    <button string="Tiene ubicacion de almacen" type="object" class="oe_button_box oe_right" icon="STOCK_YES" attrs="{'invisible':[('tiene_ubicacion_almacen', '!=', True)]}"/>
+                    <button string="No tiene ubicacion de almacen" type="object" class="oe_button_box oe_right" icon="STOCK_NO" attrs="{'invisible':[('tiene_ubicacion_almacen', '==', True)]}"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="fp_sale_order_suma_totales_inherit" model="ir.ui.view">
+            <field name="name">fp.sale.order.suma.totales.inherit</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <field name="amount_total" position="after">
+                    <field name="suma_verdes"/>
+                    <field name="suma_rojos"/>
+                </field>
+                
+            </field>
+        </record>
+    </data>
+
+</openerp>

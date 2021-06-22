@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<openerp>
+    <data>
+        <record id="fp_order_stock_warning_inherit" model="ir.ui.view">
+            <field name="name">fp.order.stock.warning.inherit</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <button name="action_quotation_send" position="replace"> 
+                    <button name="calculate_stock" string="Recalcular stock de lineas" type="object" class="oe_highlight" context="{'warehouse_id': warehouse_id}"/>
+                </button>
+            </field>
+        </record>
+
+    
+    </data>
+</openerp>

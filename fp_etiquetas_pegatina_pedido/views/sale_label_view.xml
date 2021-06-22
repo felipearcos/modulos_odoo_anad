@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <report id="report_product_sale_label"
+            model="sale.order"
+            string="Etiqueta de pedido"
+            report_type="qweb-pdf"
+            name="fp_etiquetas_pegatina_pedido.report_label_sale_peg"/>
+    </data>
+</openerp>

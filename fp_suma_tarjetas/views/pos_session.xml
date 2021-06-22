@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<openerp>
+    <data>
+
+<record id="fp_mensaje_tarjeta_wizard" model="ir.actions.act_window">
+            <field name="name">fp.mensaje.tarjeta</field>
+            <field name="res_model">fp.message</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>  
+
+ <record model="ir.ui.view" id="fp_pos_session_form_inherit">
+            <field name="name">fp.pos.session.form.inherit</field>
+            <field name="model">pos.session</field>
+            <field name="inherit_id" ref="point_of_sale.view_pos_session_form"/>
+            <field name="arch" type="xml">
+                    <xpath expr="//separator[@string='Summary by Payment Methods']" position="before">
+                        <newline/>
+                        <separator string="Control de pagos por tarjeta" colspan="20" attrs="{'readonly' : [('state', '!=', 'opened')]}"/>
+                        <group col="20">
+                            <field name="num_tickets" attrs="{'readonly' : [('state', '!=', 'opened')]}"/>
+                            <field name="suma_tarjeta" attrs="{'readonly' : [('state', '!=', 'opened')]}" />
+                            <field name="tarjeta_contada" invisible="1" />
+                        </group>
+                        <separator string=" " colspan="20"/>
+                        <newline/>
+                    </xpath>
+                    <xpath expr="//button[@name='cashbox_control']" position="replace">
+                        <!-- Si la tarjeta no esta contada, no se ve el boton original -->
+                        <button name="cashbox_control" type="workflow" string="Fin de la sesión" attrs="{'invisible' : ['|', ('tarjeta_contada', '=', False),('state', '!=', 'opened')]}" class="oe_highlight"/>
+                  </xpath>
+                  <xpath expr="//button[@name='cashbox_control']" position="after">
+                        <!-- Si la tarjeta esta contada, se ve el boton original -->
+                        <button name="aviso" type="object" string="Fin de la sesión" attrs="{'invisible' : ['|',('tarjeta_contada', '=', True),('state', '!=', 'opened')]}" />
+                  </xpath>
+             </field>
+ </record>    
+    <!--Wizard mensaje-->
+    <record id="fp_mensaje_tarjeta" model="ir.ui.view">
+            <field name="name">fp.mensaje.tarjeta</field>
+            <field name="model">fp.message</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Mensaje" version="7.0">
+                    <separator string="Comprobacion tarjetas" colspan="6"/>
+                    <field name="text" colspan="4" nolabel="1" readonly="1"  widget="html"/>                                                            
+                    <newline/>
+                    <separator colspan="6"/>
+                    <footer>
+                        <button name="aceptar" type="object" string="Aceptar" class="oe_highlight" invisible="1"/>                             
+                        <button special="cancel" string="Aceptar" class="oe_highlight"/>                    
+                    </footer>                                    
+                </form>
+            </field>
+    </record> 
+
+        
+    </data>
+</openerp>

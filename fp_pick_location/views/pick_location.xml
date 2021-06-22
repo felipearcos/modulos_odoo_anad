@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<openerp>
+   <data>
+        <record id="pick_location_tree_view" model="ir.ui.view">
+            <field name="name">pick.location.tree</field>
+            <field name="model">pick.location</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Ubicaciones de Pick" editable="top">
+                  <field name="name" />
+                  <field name="available" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="pick_location_action" model="ir.actions.act_window">
+            <field name="name">Ubicaciones de Pick</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">pick.location</field>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="pick_location_tree_view"/>
+        </record>
+
+        <menuitem id="pick_location_menu" name="Ubicaciones de pick" action="pick_location_action" parent="stock.menu_stock_configuration" sequence="10"/>
+
+    </data>
+
+</openerp>

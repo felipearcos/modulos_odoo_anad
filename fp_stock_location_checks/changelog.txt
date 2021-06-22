@@ -1,0 +1,4 @@
+﻿03-10-2019		-			Inicio del desarrollo
+04-10-2019		8.0.1			Primera instalación en test de REAL
+14-11-2019		8.0.2			Añadidos los campos de Torrellano; CSS ajustado, instalación nueva en REAL
+15-11-2019		8.0.3			Se añaden los nuevos campos en el resto de almacenes

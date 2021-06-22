@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<openerp>
+    <data>
+
+        <record id="view_stock_picking_order_ref_form" model="ir.ui.view">
+            <field name="name">view.stock.picking.order.ref.form</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.view_picking_form"/>
+            <field name="arch" type="xml">
+                <field name="origin" position="after">
+                    <field name="client_order_ref" attrs="{'invisible': [('partner_id', 'not in', [3227,3228])]}" readonly="1"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="view_stock_picking_order_ref_search" model="ir.ui.view">
+            <field name="name">view.stock.picking.order.ref.search</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.view_picking_internal_search"/>
+            <field name="arch" type="xml">
+                <field name="name" position="after">
+                    <field name="client_order_ref" string="Ref. pedido"
+                        filter-domain="[('client_order_ref','ilike',self)]" />
+                </field>
+            </field>
+        </record>-
+
+        <record id="view_stock_picking_order_ref_tree" model="ir.ui.view">
+            <field name="name">view.stock.picking.order.ref.tree</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.vpicktree"/>
+            <field name="arch" type="xml">
+                <field name="state" position="after">
+                    <field name="client_order_ref" string="Ref. Pedido" />
+                </field>
+            </field>
+        </record>
+
+    </data>
+</openerp>

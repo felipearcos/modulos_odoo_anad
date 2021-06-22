@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <!-- Crea los dos tipos de secuencia que se van a utilizar -->
+    <data noupdate="1">
+
+        <record id="base_producto_auto_sequence" model="ir.sequence.type">
+            <field name="name">Secuencia de producto</field>
+            <field name="code">base.producto.auto.sequence</field>
+        </record>
+        <record id="base_categoria_auto_sequence" model="ir.sequence.type">
+            <field name="name">Secuencia de categoria</field>
+            <field name="code">base.categoria.auto.sequence</field>
+        </record>
+
+    </data>
+</openerp>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <template id="fp_picking_report">
+            <t t-call="fp_picking_method.fp_picking_report_header"/>
+            <t t-raw="0"/>
+        </template>
+
+        <template id="fp_picking_report_footer">       
+        </template>
+
+        <template id="fp_picking_report_layout">
+           <t t-call="fp_picking_method.fp_picking_report_header"/>
+            <t t-raw="0"/>
+        </template>
+
+        <template id="fp_picking_report_header">
+            <div class="header">
+                <div class="row">
+                    <div class="col-xs-4">
+                    </div>
+                </div>
+            </div>
+        </template>
+
+    </data>
+</openerp>

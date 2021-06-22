@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <report id="account.jai_invoice"
+                string="Factura especial"
+                model="account.invoice"
+                report_type="qweb-pdf"
+                name="fp_special_report.fp_invoice_template"
+                file="fp_special_report.fp_invoice_template"
+                attachment_use="True"
+                attachment="(object.state in ('open','paid')) and ('JAI'+(object.number or '').replace('/','')+'.pdf')"/>
+
+        <record id="account.jai_invoice" model="ir.actions.report.xml">
+            <field name="paperformat_id" eval="ref('fp_special_report.fp_paper')"/>
+        </record>
+
+        <report id="sale.jai_quotation"
+                string="Presupuesto especial"
+                model="sale.order"
+                report_type="qweb-pdf"
+                name="fp_special_report.fp_quotation_template"
+                file="fp_special_report.fp_quotation_template"
+                attachment_use="True"
+                attachment="('JAI.pdf')"/>
+
+        <record id="sale.jai_quotation" model="ir.actions.report.xml">
+            <field name="paperformat_id" eval="ref('fp_special_report.fp_paper')"/>
+        </record>
+
+    </data>
+</openerp>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<openerp>
+    <data>
+
+        <record id="fp_stock_picking_pay_inherit" model="ir.ui.view">
+            <field name="name">fp.stock.picking.pay.inherit</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.view_picking_form"/>
+            <field name="arch" type="xml">
+                <field name="x_tiempo_entrega" position="after">
+                    <field name="pagado"/>
+                </field>
+            </field>
+        </record>
+
+    </data>
+</openerp>

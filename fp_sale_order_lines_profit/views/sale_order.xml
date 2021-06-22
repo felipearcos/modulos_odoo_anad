@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<openerp>
+   <data>
+        <record id="fp_sale_order_line_profit_inherit" model="ir.ui.view">
+            <field name="name">fp.sale.order.line.profit.inherit</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr='//field[@name="order_line"]//tree/field[@name="price_subtotal"]' position="after">
+                    <field name="profit_percentage" groups="fp_sale_order_lines_profit.fp_profit_permission" />
+                    <field name="profit_color_char" widget="image" attrs="{'invisible':[('profit_color_char', 'not in', ['red','green','yellow'])]}"/> 
+                </xpath>
+            </field>
+        </record>
+
+        <record id="fp_sale_order_profit_inherit" model="ir.ui.view">
+            <field name="name">fp.sale.order.profit.inherit</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                 <xpath expr='//group[@name="sale_total"]' position="before">
+                    <label for="profit_percentage" string="Rentabilidad Pedido"/>
+                    <field name="profit_percentage" class="oe_inline" groups="fp_sale_order_lines_profit.fp_profit_permission" />%
+                </xpath>
+            </field>
+        </record>
+
+        <record id="fp_sale_order_profit_tree_inherit" model="ir.ui.view">
+            <field name="name">fp.sale.order.profit.tree.inherit</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_tree"/>
+            <field name="arch" type="xml">
+                <field name="state" position="after">
+                    <field name="profit_percentage" groups="fp_sale_order_lines_profit.fp_profit_permission" />
+                    <field name="profit_color_char" widget="image" resize="25,25"/> 
+                </field>
+            </field>
+        </record>
+
+        <record id="fp_sale_order_profit_quotation_tree_inherit" model="ir.ui.view">
+            <field name="name">fp.sale.order.profit.quotation.tree.inherit</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_quotation_tree"/>
+            <field name="arch" type="xml">
+                <field name="state" position="after">
+                    <field name="profit_percentage" groups="fp_sale_order_lines_profit.fp_profit_permission" />
+                    <field name="profit_color_char" widget="image" /> 
+                </field>
+            </field>
+        </record>
+    </data>
+
+</openerp>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!-- Wizard de generar referencias masivamente -->
+        <record id="wizard_update_code_product" model="ir.ui.view">
+            <field name="name">wizard.update.product.code</field>
+            <field name="model">update.product.code</field>
+            <field name="arch" type="xml">
+            <form string="Generar referencias">
+                <p class="oe_grey">
+                <h2><i class="fa fa-exclamation-triangle"/> IMPORTANTE</h2>
+                <br/>
+                Pulsando el boton <b>Generar referencias</b> se generaran automaticamente las referencias de los productos seleccionados a partir de la categoria a la que pertenezcan.<br/><br/>
+
+                Cuidado, si el producto ya tiene una referencia se sobreescribira.<br/><br/>
+
+                Si no esta seguro, pulse <b>Cancelar</b>.
+                </p>
+                  <footer>
+                      <button name="update_code" string="Generar referencias"
+                              type="object" class="oe_highlight"/>
+                      or
+                      <button string="Cancelar" class="oe_link" special="cancel" />
+                  </footer>
+            </form>
+            </field>
+        </record>
+
+        <record id="action_update_code_product" model="ir.actions.act_window">
+            <field name="name">Generar referencias masivamente</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">update.product.code</field>
+            <field name="src_model">product.template</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="wizard_update_code_product"/>
+            <field name="context">{'record_ids': active_ids}</field>
+            <field name="target">new</field>
+        </record>
+
+        <act_window id="act_update_code_product"
+            key2="client_action_multi"
+            name="Generar referencias"
+            res_model="update.product.code"
+            src_model="product.template"
+            view_id="wizard_update_code_product"
+            view_mode="form" target="new" view_type="form" />
+
+    </data>
+</openerp>

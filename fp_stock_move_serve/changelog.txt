@@ -1,0 +1,5 @@
+11-01-2018		-		Inicio del desarrollo
+17-01-2018		8.0.1 		Primera versión estable en TEST
+17-01-2018		8.0.1		Instalación primera versión PRODUCCIÓN
+17-01-2018		8.0.2		Inicio desarrollo versión 2, incluyendo modificaciones
+18-01-2018		8.0.2		Instalación segunda versión PRODUCCIÓN. Incluye check de pagado en albarán

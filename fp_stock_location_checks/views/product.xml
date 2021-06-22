@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<openerp>
+    <data>
+
+        <record id="fp_checkbox_location_form_inherit" model="ir.ui.view">
+            <field name="name">fp.checkbox.location.form.inherit</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="fp_location_by_product.fp_location_product_template_form_view"/>
+            <field name="arch" type="xml">
+                <field name="ref_c" position="replace">
+                    <group col="4" colspan="4">
+                        <field name="ref_c" colspan="4"/>
+                        <field class="little oe_inline" name="check_double" string="Doble ubicación" colspan="2"/><field class="little oe_inline" placeholder="Ubicaciones extra del producto" nolabel="1" name="text_double" colspan="2" attrs="{'invisible':[('check_double','=', False)]}"/>
+                        <field class="little oe_inline" name="check_vp" string="Venta Prioritaria" colspan="4"/>
+                    </group>
+                </field>
+                <field name="ref_t" position="replace">
+                    <group col="4" colspan="4">
+                        <field name="ref_t" colspan="4"/>
+                        <field class="little oe_inline" name="check_double_tr" string="Doble ubicación" colspan="2"/><field class="little oe_inline" placeholder="Ubicaciones extra del producto" nolabel="1" name="text_double_tr" colspan="2" attrs="{'invisible':[('check_double_tr','=', False)]}"/>
+                        <field class="little oe_inline" name="check_vp_tr" string="Venta Prioritaria" colspan="4"/>
+                    </group>
+                </field>
+                <field name="ref_cu" position="replace">
+                    <group col="4" colspan="4">
+                        <field name="ref_cu" colspan="4"/>
+                        <field class="little oe_inline" name="check_double_el" string="Doble ubicación" colspan="2"/><field class="little oe_inline" placeholder="Ubicaciones extra del producto" nolabel="1" name="text_double_el" colspan="2" attrs="{'invisible':[('check_double_el','=', False)]}"/>
+                        <field class="little oe_inline" name="check_vp_el" string="Venta Prioritaria" colspan="4"/>
+                    </group>
+                </field>
+                <field name="ref_m" position="replace">
+                    <group col="4" colspan="4">
+                        <field name="ref_m" colspan="4"/>
+                        <field class="little oe_inline" name="check_double_mu" string="Doble ubicación" colspan="2"/><field class="little oe_inline" placeholder="Ubicaciones extra del producto" nolabel="1" name="text_double_mu" colspan="2" attrs="{'invisible':[('check_double_mu','=', False)]}"/>
+                        <field class="little oe_inline" name="check_vp_mu" string="Venta Prioritaria" colspan="4"/>
+                    </group>
+                </field>
+            </field>
+        </record>
+
+    </data>
+
+</openerp>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<openerp>
+    <data>
+        <record id="fp_procurement_picking_purchase_inherit" model="ir.ui.view">
+            <field name="name">fp.procurement.picking.purchase.inherit</field>
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="purchase.purchase_order_form"/>
+            <field name="arch" type="xml">
+                <field name="price_subtotal" position="after">
+                    <field name="destino_producto_mv"/>
+                </field>
+            </field>
+        </record>
+    </data>
+
+</openerp>

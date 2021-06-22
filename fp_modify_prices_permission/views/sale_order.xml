@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<openerp>
+   <data>
+        <record id="fp_sale_order_profit_modify_permission_inherit" model="ir.ui.view">
+            <field name="name">fp.sale.order.profit.modify.permission.inherit</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form" />
+            <field name="groups_id" eval="[(6, 0, [ref('fp_modify_prices_permission.fp_modify_prices_permission') ])]" />                
+            <field name="arch" type="xml">                                   
+                <xpath expr="//tree[@string='Sales Order Lines']/field[@name='price_unit']" position="attributes">
+                   <attribute name="readonly">0</attribute>                   
+                </xpath>                             
+            </field>
+        </record>
+    </data>
+
+    
+
+</openerp>

@@ -1,0 +1,19 @@
+﻿CHANGELOG
+=========
+
+8.0.3 --- 08/06/18 
+==================
+- Añadido stock_transfer_details_items.py, con las 3 ubicaciones de almacén como campos relacionados
+- Añadida modificación a la vista de stock.view_stock_enter_transfer_details
+- Actualizado el informe a la última versión
+
+
+8.0.6 --- 06/08/19
+- Añade ubicación Murcia
+- Cambia ubicación Cuenca por ubicación Elda
+- Corrige fallos en vistas
+
+8.0.7 --- 13/12/19
+- Añade ubicación para cada tienda
+- Añade un campo que calcula si un producto tiene reabatecimiento para cada tienda
+- Hace una vista nueva, añadiendo una pestaña nueva en la vista del producto 

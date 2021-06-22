@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<openerp>
+    <data>
+         <record model="ir.ui.view" id="pos_config_customer_default_inherit">
+            <field name="name">pos.config.customer.default.inherit</field>
+            <field name="model">pos.config</field>
+            <field name="inherit_id" ref="point_of_sale.view_pos_config_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='sequence_id']" position="after">
+                    <field name="cliente_defecto" />                        
+                </xpath>
+             </field>
+         </record>      
+    </data>
+</openerp>

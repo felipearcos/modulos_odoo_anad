@@ -1,0 +1,34 @@
+.little {
+    font-size: 11px;
+}
+input[name="check_double"] {
+  width:11px;
+}
+input[name="check_vp"] {
+  width:11px;
+}
+input[name="check_double_tr"] {
+  width:11px;
+}
+input[name="check_vp_tr"] {
+  width:11px;
+}
+input[name="tiene_reab_alb"] {
+  width:11px;
+}
+input[name="tiene_reab_ali"] {
+  width:11px;
+}
+input[name="tiene_reab_cue"] {
+  width:11px;
+}
+input[name="tiene_reab_tor"] {
+  width:11px;
+}
+input[name="tiene_reab_vil"] {
+  width:11px;
+}
+span.little input[type="text"] {
+  width:180px !important;
+  height:20px !important;
+}

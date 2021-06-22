@@ -1,0 +1,4 @@
+05-12-2018		-		Inicio del desarrollo
+10-12-2018		8.0.1		Primera instalación, desinstalada por bug
+02-01-2019		8.0.2		Versión estable
+03-01-2019		8.0.3		Modificaciones en el informe y en la vista de busqueda, seguramente version final

@@ -1,0 +1,2 @@
+﻿03-01-2019		-	Inicio del desarrollo
+03-01-2019		8.0.1	Primera instalacion en real

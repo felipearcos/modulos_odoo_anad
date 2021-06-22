@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<openerp>
+    <data>
+        <record id="fp_account_opening_account_form_inherit" model="ir.ui.view">
+            <field name="name">fp.account.opening.account.form.inherit</field>
+            <field name="model">account.account</field>
+            <field name="inherit_id" ref="account.view_account_form"/>
+            <field name="arch" type="xml">
+                <field name="balance" position="after">
+                    <field name="balance_w_opening"/>
+                </field>
+                <field name="balance" position="replace">
+                    <field name="balance" string="Saldo del año contable"/>
+                </field>
+            </field>
+        </record>
+    </data>
+</openerp>

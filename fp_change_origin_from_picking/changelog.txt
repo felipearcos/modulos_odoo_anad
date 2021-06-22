@@ -1,0 +1,5 @@
+﻿07-03-2019		-		Inicio del desarrollo
+07-03-2019		8.0.1		Primera instalación en REAL
+10-03-2019		8.0.2		Corrección de errores
+16-04-2019		8.0.3		Añadida opción de actualizar pick, actualización en producción
+02-05-2019		8.0.4		Añadido método para actualizar usuario encargado del albarán, actualización en producción 

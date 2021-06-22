@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <report id="report_product_label"
+            model="product.product"
+            string="Etiquetas pegatinas de producto Central"
+            report_type="qweb-pdf"
+            name="fp_etiquetas_pegatina.report_label_product_peg"/>
+
+            <report id="report_product_label_tr"
+            model="product.product"
+            string="Etiquetas pegatinas de producto Torrellano"
+            report_type="qweb-pdf"
+            name="fp_etiquetas_pegatina.report_label_product_peg_tr"/>
+
+             <report id="report_product_label_el"
+            model="product.product"
+            string="Etiquetas pegatinas de producto Elda"
+            report_type="qweb-pdf"
+            name="fp_etiquetas_pegatina.report_label_product_peg_el"/>
+
+            <report id="report_product_label_mu"
+            model="product.product"
+            string="Etiquetas pegatinas de producto Murcia"
+            report_type="qweb-pdf"
+            name="fp_etiquetas_pegatina.report_label_product_peg_mu"/>
+
+            <report id="report_product_label_mostrador"
+            model="product.product"
+            string="Etiquetas pegatinas para Mostrador"
+            report_type="qweb-pdf"
+            name="fp_etiquetas_pegatina.report_label_product_peg_mostrador"/>
+    </data>
+</openerp>

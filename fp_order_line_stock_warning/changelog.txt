@@ -1,0 +1,4 @@
+﻿17-01-20		-		    Inicio del desarrollo
+18-01-20		8.0.1		Primera versión, solo salta el aviso de stock cuando se añade el producto
+23-01-20		8.0.2		Segunda versión, añade un botón que calcula el stock de todos los productos del presupuesto cuando se pulsa
+24-01-20        8.0.2       Instalación en TEST y REAL

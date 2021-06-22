@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<openerp>
+    <data>
+
+        <record id="fp_stock_move_serve_inherit" model="ir.ui.view">
+            <field name="name">fp.stock.move.serve.inherit</field>
+            <field name="model">stock.move</field>
+            <field name="inherit_id" ref="stock.view_move_form"/>
+            <field name="arch" type="xml">
+                <field name="date_expected" position="after">
+                    <field name="a_servir"/>
+                    <field name="cantidad_servida"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="fp_stock_move_serve_inline_inherit" model="ir.ui.view">
+            <field name="name">fp.stock.move.serve.inline.inherit</field>
+            <field name="model">stock.move</field>
+            <field name="inherit_id" ref="stock.view_move_picking_tree"/>
+            <field name="arch" type="xml">
+                <field name="state" position="after">
+                    <field name="a_servir" attrs="{'readonly':[('picking_pagado','=',True)]}" editable="bottom" />
+                    <field name="cantidad_servida" attrs="{'readonly':[('picking_pagado','=',True)]}" editable="bottom"  />
+                    <field name="picking_pagado" invisible="1"  />
+                </field>
+            </field>
+        </record>
+    </data>
+</openerp>

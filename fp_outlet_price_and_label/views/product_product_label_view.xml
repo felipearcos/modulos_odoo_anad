@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <report id="report_product_outlet_label"
+            model="product.product"
+            string="Etiquetas Outlet (con precio tachado)"
+            report_type="qweb-pdf"
+            name="fp_outlet_price_and_label.product_outlet_label_report"/>
+    </data>
+</openerp>

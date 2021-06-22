@@ -1,0 +1,9 @@
+11-01-2019		-		Inicio del desarrollo
+17-01-2019		8.0.1 		Primera versión estable en TEST
+17-01-2019		8.0.1		Instalación primera versión PRODUCCIÓN
+17-01-2019		8.0.2		Inicio desarrollo versión 2, incluyendo modificaciones
+18-01-2019		8.0.2		Instalación segunda versión PRODUCCIÓN. Incluye check de pagado en albarán
+09-10-2019		-		Desinstalación módulo original
+09-10-2019		8.0.3		Fusión con módulo fp_sale_order_line_ref_location	
+09-10-2019		8.0.3		Instalación en test		
+10-10-2019		8.0.4		Cambia el modo de calcular los indicadores de ubicación. Añade un cálculo de lo que hay en cada color	

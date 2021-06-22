@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<openerp>
+    <data>
+        <record id="fp_res_partner_form_codes_inherit" model="ir.ui.view">
+            <field name="name">fp.res.partner.form.codes.inherit</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                
+                <xpath expr="//page[@name='sales_purchases']" position="after">
+                    <page string="Códigos de cliente"> 
+                        <group>
+                            <field name="partner_codes" widget="many2many" domain="[('partner_id','=', False)]" delete="false">
+                                <tree create="0" delete="false">
+                                    <field name="name" />
+                                    <button name="deactivate" string="Desactivar" type="object" icon="gtk-cancel" confirm="¿Realmente desea desactivar el código y desvincularlo del cliente?"/>
+
+                                </tree>
+                            </field>
+                        </group>
+                    </page>
+                </xpath>
+                
+                
+            </field>
+        </record>
+
+        <record id="fp_res_partner_search_codes_inherit" model="ir.ui.view">
+            <field name="name">fp.res.partner.search.codes.inherit</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_res_partner_filter"/>
+            <field name="arch" type="xml">
+                <field name="name" position="after">
+                    <field name="partner_codes" string="Código de cliente" filter_domain="[('partner_codes.name','ilike',self)]" />
+                </field>
+                
+            </field>
+        </record>
+
+        <record id="fp_res_partner_form_pos_inherit" model="ir.ui.view">
+            <field name="name">fp.res.partner.form.pos.inherit</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="point_of_sale.view_partner_property_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page[@string='Point of Sale']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>  
+            </field>
+        </record>
+    </data>
+</openerp>

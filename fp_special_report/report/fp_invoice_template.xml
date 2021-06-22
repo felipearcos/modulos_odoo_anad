@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <template id="fp_invoice_template">
+            <style type="text/css">
+                .address-border {border: 1px solid black;
+                                 padding: 2%;}
+                .table-margin {margin-top: 3%;}
+
+                body {
+                    font-size: 20px !important;
+                }
+            </style>
+            <t t-call="report.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="fp_special_report.fp_invoice_report">
+                        <div class="page" style="font-size: 25px; font-family: 'Indie Flower', cursive;">
+                            <style type="text/css">
+                                @import url('https://fonts.googleapis.com/css?family=Indie+Flower');
+
+                            </style>
+                            <div class="oe_structure"/>
+                            <div class="row">
+                                <div class="col-xs-6 pull-left">
+                                    <h4>
+                                        <strong>
+                                            <span style="font-size: 25px; font-family: 'Indie Flower', cursive;">Factura</span>
+                                        </strong>
+                                    </h4>
+                                </div>
+                            </div>
+                            <div class="row table-margin">
+                                <table class="table table-condensed">
+                                    <thead>
+                                        <tr>
+                                            <th>Producto</th>
+                                            <th>Cantidad</th>
+                                            <th class="text-right">Precio profesional</th>
+                                            <th class="text-right">Importe</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="invoice_tbody">
+                                        <tr t-foreach="o.invoice_line" t-as="l">
+                                            <td>
+                                                <span t-field="l.product_id.default_code"/>
+                                            </td>
+                                            <td>
+                                                <span t-field="l.quantity"/>
+                                            </td>
+                                            <td class="text-right">
+                                                <span t-field="l.price_unit"/>
+                                            </td>
+                                            <td class="text-right">
+                                               <span t-field="l.price_subtotal"/> 
+                                            </td>
+                                     </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="oe_structure"/>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+
+    </data>
+</openerp>
